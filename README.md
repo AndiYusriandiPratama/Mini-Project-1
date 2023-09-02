@@ -1,8 +1,11 @@
-# React + Vite
+Langkah 1: Clone Repository
+git clone hhttps://github.com/AndiYusriandiPratama/Mini-Project-1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Langkah 2: Install Dependencise
+npm install
 
-Currently, two official plugins are available:
+Langkah 3: Jalankan Json Server
+npx json-server --watch src/data/db.json --routes server/json-server.json --port 3001
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Langkah 4: Jalankan React
+npm Start
