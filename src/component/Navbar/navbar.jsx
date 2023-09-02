@@ -19,8 +19,8 @@ function Navbar({ onSearch }) {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Menghentikan perilaku default form
-    handleSearch(); // Panggil fungsi pencarian saat form disubmit
+    e.preventDefault();
+    handleSearch();
   };
 
   return (
