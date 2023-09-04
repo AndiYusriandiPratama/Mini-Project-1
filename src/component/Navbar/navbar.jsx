@@ -33,7 +33,7 @@ function Navbar({ onSearch }) {
       color="white"
     >
       <Box>
-        <Link fontSize="xl" fontWeight="bold" href="#">
+        <Link fontSize="xl" fontWeight="bold" href="/">
           7 Shop
         </Link>
       </Box>
@@ -61,6 +61,12 @@ function Navbar({ onSearch }) {
       <Spacer />
 
       <Box>
+        <Link marginRight="1rem" href="/find-events">
+          Find Events
+        </Link>
+        <Link marginRight="1rem" href="/create-events">
+          Create Events
+        </Link>
         <Link marginRight="1rem" href="#">
           Login
         </Link>
