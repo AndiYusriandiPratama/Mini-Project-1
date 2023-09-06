@@ -5,6 +5,8 @@ import CreateEvents from "./component/MainPage/CreateEvent";
 import Navbar from "./component/Navbar/navbar";
 import Register from "./component/Auth/Register";
 import Login from "./component/Auth/Login";
+import FindEvents from "./component/MainPage/FindEvents";
+import EventDetails from "./component/FindEvents/EventDetails";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/" element={<MainPage />} />
           <Route exact path="/create-events" element={<CreateEvents />} />
+          <Route exact path="/find-events" element={<FindEvents />} />
+          <Route exact path="/events/:id" element={<EventDetails />} />
         </Routes>
       </div>
     </Router>
