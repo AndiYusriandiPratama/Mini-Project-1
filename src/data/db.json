@@ -179,6 +179,14 @@
       "location": "Semarang",
       "description": "Turnamen Catur adalah kompetisi catur terbesar tahun ini. Saksikan pertandingan otak-otak terbaik di dunia catur!",
       "img": "https://i.pinimg.com/236x/7a/2d/29/7a2d29d06eabf2a8008f97b74e9cc281.jpg"
+    },
+    {
+      "name": "Event",
+      "date": "2023-09-29",
+      "time": "12:10",
+      "location": "Jakarta Timur",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed libero enim sed faucibus turpis in eu. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Nibh sed pulvinar proin gravida hendrerit. Sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra. Duis at tellus at urna condimentum mattis pellentesque. Leo urna molestie at elementum. Augue ut lectus arcu bibendum at varius vel. Odio pellentesque diam volutpat commodo sed egestas egestas.",
+      "id": 21
     }
   ],
   "users": [
@@ -207,7 +215,7 @@
       "userId": 1,
       "productId": 1,
       "quantity": 2,
-      "totalPrice": 100.0,
+      "totalPrice": 100,
       "timestamp": "2023-09-01T10:00:00Z"
     },
     {
@@ -215,7 +223,7 @@
       "userId": 2,
       "productId": 2,
       "quantity": 1,
-      "totalPrice": 30.0,
+      "totalPrice": 30,
       "timestamp": "2023-09-02T14:30:00Z"
     },
     {
@@ -223,7 +231,7 @@
       "userId": 3,
       "productId": 3,
       "quantity": 3,
-      "totalPrice": 225.0,
+      "totalPrice": 225,
       "timestamp": "2023-09-03T09:15:00Z"
     }
   ]
