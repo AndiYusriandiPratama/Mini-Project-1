@@ -2,26 +2,14 @@ import {
   Box,
   Flex,
   Spacer,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Button,
   Link,
+  IconButton,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { useState } from "react";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
-function Navbar({ onSearch }) {
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = () => {
-    onSearch(searchQuery);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleSearch();
-  };
+function Navbar() {
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Flex
@@ -32,48 +20,77 @@ function Navbar({ onSearch }) {
       backgroundColor="teal.500"
       color="white"
     >
-      <Box>
+      <Box marginRight="5">
         <Link fontSize="xl" fontWeight="bold" href="/">
           7 Shop
         </Link>
       </Box>
 
-      <form onSubmit={handleSubmit}>
-        {" "}
-        <InputGroup w="70%">
-          <Input
-            type="text"
-            placeholder="Cari produk..."
-            size="md"
-            borderRadius="full"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <InputRightElement width="4rem">
-            <Button type="submit" h="1.65rem" size="sm">
-              {" "}
-              <SearchIcon />
-            </Button>
-          </InputRightElement>
-        </InputGroup>
-      </form>
-
       <Spacer />
 
-      <Box>
+      <Box display={{ base: "none", md: "block" }}>
         <Link marginRight="1rem" href="/find-events">
           Find Events
         </Link>
         <Link marginRight="1rem" href="/create-events">
           Create Events
         </Link>
-        <Link marginRight="1rem" href="#">
+        <Link marginRight="1rem" href="/login">
           Login
         </Link>
-        <Link marginRight="1rem" href="#">
-          SignUp
+        <Link marginRight="1rem" href="/register">
+          Sign Up
         </Link>
         <Link href="#">Keranjang</Link>
+      </Box>
+
+      <IconButton
+        aria-label="Open menu"
+        icon={<HamburgerIcon />}
+        display={{ base: "block", md: "none" }}
+        onClick={onToggle}
+      />
+
+      <Box
+        display={isOpen ? "block" : "none"}
+        position="absolute"
+        top="60px"
+        right="0"
+        backgroundColor="teal.500"
+        borderRadius="5%"
+        padding="1rem"
+        boxShadow="-moz-initial"
+      >
+        <Link
+          display="block"
+          color="white"
+          marginBottom="0.5rem"
+          href="/find-events"
+        >
+          Find Events
+        </Link>
+        <Link
+          display="block"
+          color="white"
+          marginBottom="0.5rem"
+          href="/create-events"
+        >
+          Create Events
+        </Link>
+        <Link display="block" color="white" marginBottom="0.5rem" href="/login">
+          Login
+        </Link>
+        <Link
+          display="block"
+          color="white"
+          marginBottom="0.5rem"
+          href="/register"
+        >
+          Sign Up
+        </Link>
+        <Link display="block" color="white" href="#">
+          Keranjang
+        </Link>
       </Box>
     </Flex>
   );

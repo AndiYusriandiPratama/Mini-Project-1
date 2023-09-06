@@ -1,28 +1,184 @@
 {
-  "products": [
+  "events": [
     {
       "id": 1,
-      "name": "Produk 1",
-      "description": "Deskripsi Produk 1",
-      "price": 50.0,
-      "stock": 100,
-      "rating": 4.5
+      "title": "Fashion Show",
+      "date": "2023-10-15",
+      "time": "09:00 AM",
+      "location": "Jakarta",
+      "description": "Fashion Show adalah sebuah acara mode yang akan memamerkan koleksi pakaian terbaru dari para desainer ternama. Acara ini akan dihadiri oleh model-model top dan selebriti. Jangan lewatkan kesempatan untuk melihat tren mode terkini!",
+      "img": "https://i.pinimg.com/236x/5c/fd/b1/5cfdb1311ba919039816038c31f775d0.jpg"
     },
     {
       "id": 2,
-      "name": "Produk 2",
-      "description": "Deskripsi Produk 2",
-      "price": 30.0,
-      "stock": 75,
-      "rating": 4.0
+      "title": "Seminar Nasional",
+      "date": "2023-11-20",
+      "time": "02:30 PM",
+      "location": "Surabaya",
+      "description": "Seminar Nasional adalah sebuah acara diskusi yang akan menghadirkan para ahli dalam berbagai bidang. Tema seminar kali ini adalah 'Inovasi dalam Dunia Bisnis'. Segera daftar dan tingkatkan pengetahuan Anda!",
+      "img": "https://i.pinimg.com/236x/8b/71/02/8b7102f10c0a7c815013289d01a7f3d5.jpg"
     },
     {
       "id": 3,
-      "name": "Produk 3",
-      "description": "Deskripsi Produk 3",
-      "price": 75.0,
-      "stock": 50,
-      "rating": 4.8
+      "title": "Lomba Karya Tulis",
+      "date": "2023-12-05",
+      "time": "10:15 AM",
+      "location": "Bandung",
+      "description": "Lomba Karya Tulis adalah kompetisi menulis yang terbuka untuk semua kalangan. Tema lomba kali ini adalah 'Peran Seni dalam Masyarakat'. Sampaikan ide kreatif Anda melalui tulisan!",
+      "img": "https://i.pinimg.com/236x/68/92/cb/6892cb5e08ff9e38a894706a8277375c.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Konser Musik",
+      "date": "2023-11-30",
+      "time": "03:45 PM",
+      "location": "Yogyakarta",
+      "description": "Konser Musik akan menampilkan penampilan live dari beberapa band terkenal. Nikmati malam yang penuh musik dan hiburan dengan teman-teman Anda!",
+      "img": "https://i.pinimg.com/236x/f7/3a/f6/f73af6f74ff33c7dd95e21f7d06cc9f2.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Pameran Seni",
+      "date": "2023-10-25",
+      "time": "11:30 AM",
+      "location": "Bali",
+      "description": "Pameran Seni akan memamerkan karya seni terbaru dari seniman-seniman lokal dan internasional. Jelajahi dunia seni yang indah!",
+      "img": "https://i.pinimg.com/236x/ca/09/1e/ca091ee7a81668a80d3dc5424b6b05de.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Pelatihan Bisnis",
+      "date": "2023-12-10",
+      "time": "01:00 PM",
+      "location": "Makassar",
+      "description": "Pelatihan Bisnis adalah kesempatan bagi Anda untuk mempelajari strategi bisnis yang efektif dari para pakar bisnis terkemuka. Tingkatkan keterampilan Anda dalam dunia bisnis!",
+      "img": "https://i.pinimg.com/736x/39/1d/04/391d0409c231ae41619e8670415e370e.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Pertunjukan Teater",
+      "date": "2023-11-15",
+      "time": "10:45 AM",
+      "location": "Medan",
+      "description": "Pertunjukan Teater akan menghadirkan drama-drama pemenang penghargaan. Rasakan pengalaman teater yang mendalam!",
+      "img": "https://i.pinimg.com/236x/f3/6c/e6/f36ce6a27ad98bf898a7ee0b1e81eccb.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Workshop Fotografi",
+      "date": "2023-12-20",
+      "time": "04:15 PM",
+      "location": "Palembang",
+      "description": "Workshop Fotografi adalah kesempatan untuk mempelajari seni fotografi dari para fotografer profesional. Dapatkan tips dan trik untuk mengambil gambar yang luar biasa!",
+      "img": "https://i.pinimg.com/236x/f0/f9/3d/f0f93dff9a928f249034275da0504070.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Festival Makanan",
+      "date": "2023-10-05",
+      "time": "09:30 AM",
+      "location": "Semarang",
+      "description": "Festival Makanan akan memamerkan berbagai hidangan lezat dari seluruh dunia. Nikmati kelezatan kuliner dari berbagai budaya!",
+      "img": "https://i.pinimg.com/236x/b1/24/5c/b1245cd20462503860345b6d1ae9113d.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Lomba Sepak Bola",
+      "date": "2023-11-12",
+      "time": "02:00 PM",
+      "location": "Padang",
+      "description": "Lomba Sepak Bola adalah turnamen sepak bola terbesar tahun ini. Saksikan aksi tim-tim terbaik bersaing untuk meraih gelar juara!",
+      "img": "https://i.pinimg.com/236x/11/56/24/1156247b69e2b3888654caa668a1a654.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Pameran Teknologi",
+      "date": "2023-12-08",
+      "time": "11:00 AM",
+      "location": "Batam",
+      "description": "Pameran Teknologi akan memamerkan inovasi-inovasi teknologi terbaru. Jelajahi dunia teknologi yang canggih!",
+      "img": "https://i.pinimg.com/236x/cc/01/e4/cc01e444441fee3e97e65287ddd7d105.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Konferensi Medis",
+      "date": "2023-11-05",
+      "time": "03:30 PM",
+      "location": "Manado",
+      "description": "Konferensi Medis adalah acara medis tahunan yang akan menghadirkan para dokter dan ilmuwan medis. Bahas topik-topik kesehatan terkini!",
+      "img": "https://i.pinimg.com/236x/8e/58/8b/8e588b8a50768422c74eff281b22e0a2.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Festival Seni Rupa",
+      "date": "2023-10-10",
+      "time": "10:45 AM",
+      "location": "Pekanbaru",
+      "description": "Festival Seni Rupa akan memamerkan berbagai karya seni visual dari seniman-seniman lokal. Jelajahi keindahan seni rupa!",
+      "img": "https://i.pinimg.com/236x/62/73/fc/6273fc3368fba7ce866627d0fe8f4474.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Turnamen E-sport",
+      "date": "2023-11-18",
+      "time": "01:15 PM",
+      "location": "Banda Aceh",
+      "description": "Turnamen E-sport adalah kompetisi permainan video terbesar tahun ini. Saksikan pemain-pemain terbaik bersaing dalam game-game seru!",
+      "img": "https://i.pinimg.com/236x/6f/3e/5d/6f3e5d8ac073a4f09314a38e06d8be4f.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Pertunjukan Tari",
+      "date": "2023-12-30",
+      "time": "11:30 AM",
+      "location": "Pontianak",
+      "description": "Pertunjukan Tari akan menghadirkan tarian-tarian tradisional dan modern yang menakjubkan. Nikmati penampilan tari yang memukau!",
+      "img": "https://i.pinimg.com/236x/39/1d/d0/391dd07bb1ffa394c21a5ffa5b69d953.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Lomba Renang",
+      "date": "2023-11-22",
+      "time": "04:00 PM",
+      "location": "Jambi",
+      "description": "Lomba Renang adalah kompetisi renang terbuka yang akan diikuti oleh atlet-atlet terbaik. Saksikan aksi cepat di dalam air!",
+      "img": "https://i.pinimg.com/236x/de/d8/da/ded8daf43c5da64c67c6af6efa6ddb62.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Pameran Fashion",
+      "date": "2023-10-28",
+      "time": "09:30 AM",
+      "location": "Balikpapan",
+      "description": "Pameran Fashion akan memamerkan tren mode terbaru dari desainer ternama. Temukan gaya fashion terkini!",
+      "img": "https://i.pinimg.com/236x/dd/25/b2/dd25b2ebb50a85bd1f30223eb571a7e2.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Lomba Drumband",
+      "date": "2023-11-02",
+      "time": "03:15 PM",
+      "location": "Malang",
+      "description": "Lomba Drumband adalah kompetisi musik yang akan menghadirkan pertunjukan drumband yang meriah. Nikmati irama musik yang menghentak!",
+      "img": "https://i.pinimg.com/236x/c0/13/9f/c0139f7663cbfed870951df5322e1146.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Pameran Otomotif",
+      "date": "2023-10-17",
+      "time": "01:45 PM",
+      "location": "Yogyakarta",
+      "description": "Pameran Otomotif akan memamerkan berbagai kendaraan otomotif terbaru. Temukan mobil dan sepeda motor impian Anda!",
+      "img": "https://i.pinimg.com/236x/98/f4/1c/98f41c7a79ec6b6b4a184a586b07d3e8.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Turnamen Catur",
+      "date": "2023-11-29",
+      "time": "10:00 AM",
+      "location": "Semarang",
+      "description": "Turnamen Catur adalah kompetisi catur terbesar tahun ini. Saksikan pertandingan otak-otak terbaik di dunia catur!",
+      "img": "https://i.pinimg.com/236x/7a/2d/29/7a2d29d06eabf2a8008f97b74e9cc281.jpg"
     }
   ],
   "users": [
