@@ -1,0 +1,11 @@
+.imgContainer {
+  text-align: center;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  backgroundcolor: blue;
+}
+
+.imgContainer img {
+  max-width: 70%;
+  align-self: center;
+}

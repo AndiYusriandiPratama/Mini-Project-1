@@ -1,6 +1,6 @@
 {
   "routes": {
-    "/products": "/products",
+    "/events": "/events",
     "/users": "/users",
     "/transactions": "/transactions"
   }
