@@ -1,69 +1,176 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import {
+  Heading,
+  Card,
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Center,
+} from "@chakra-ui/react";
+import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "./Register.module.css"; // Import file CSS Modules
+import { useDispatch, useSelector } from "react-redux";
+import { checkEmail, registerUser } from "./../../redux/userSlice";
+
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const RegisterForm = () => {
-  const initialValues = {
-    email: "",
-    password: "",
-    username: "",
-  };
+  const [successMessage, setSuccessMessage] = useState(false);
+  const [emailCekErrorMessage, setEmailCekErrorMessage] = useState("");
 
-  const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email("Email tidak valid")
-      .required("Email wajib diisi"),
-    password: Yup.string().required("Password wajib diisi"),
-    username: Yup.string().required("Username wajib diisi"),
+  const dispatch = useDispatch();
+  const registrationError = useSelector(
+    (state) => state.user.registrationError
+  );
+
+  const UserSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    username: Yup.string().required("Username is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string().required("Password is required"),
+    password_confirm: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
+      .required("Confirm Password is required"),
   });
 
-  const handleSubmit = (values, { resetForm }) => {
-    // Tempatkan kode logika autentikasi di sini
-    console.log(values);
-    resetForm();
-  };
+  const navigate = useNavigate();
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      username: "",
+      email: "",
+      password: "",
+      password_confirm: "",
+    },
+    validationSchema: UserSchema,
+    onSubmit: async (values) => {
+      try {
+        const isEmailTaken = dispatch(checkEmail(values.email));
+        if (isEmailTaken) {
+          setEmailCekErrorMessage("Email Already Registered");
+          return;
+        }
+      } catch (error) {
+        console.log("terjadi kesalahan saat memeriksa email");
+      }
+
+      dispatch(registerUser(values)).then(() => {
+        setSuccessMessage(true);
+        setTimeout(() => {
+          navigate("/login"); // Redirect ke halaman /login setelah pendaftaran berhasil
+        }, 2000); // Ganti angka 2000 dengan durasi animasi Anda (dalam milidetik)
+      });
+    },
+  });
 
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.formRegister}>
-        <h2 className={styles.formTitle}>Register</h2>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-          {() => (
-            <Form>
-              <div className={styles.formGroup}>
-                <label htmlFor="email">Email</label>
-                <Field type="email" id="email" name="email" />
-                <ErrorMessage name="email" component="div" className="error" />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="username">Username</label>
-                <Field type="text" id="username" name="username" />
-                <ErrorMessage
-                  name="username"
-                  component="div"
-                  className="error"
-                />
-              </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="password">Password</label>
-                <Field type="password" id="password" name="password" />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="error"
-                />
-              </div>
-
-              <button type="submit">Register</button>
-            </Form>
+    <Card maxW="400px" mx="auto" p="4" rounded="md" boxShadow="lg" my="50px">
+      <Center>
+        <Heading margin={"20px 0"} as={"h3"}>
+          {" "}
+          SignUp
+        </Heading>
+      </Center>
+      <form onSubmit={formik.handleSubmit}>
+        <FormControl>
+          <FormLabel>Name</FormLabel>
+          <Input
+            type="text"
+            name="name"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+          />
+          {formik.touched.name && formik.errors.name && (
+            <div>{formik.errors.name}</div>
           )}
-        </Formik>
-      </div>
-    </div>
+        </FormControl>
+        <FormControl>
+          <FormLabel>Username</FormLabel>
+          <Input
+            type="text"
+            name="username"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.username}
+            autoComplete=""
+          />
+          {formik.touched.username && formik.errors.username && (
+            <div>{formik.errors.username}</div>
+          )}
+        </FormControl>
+        <FormControl>
+          <FormLabel>Email</FormLabel>
+          <Input
+            type="email"
+            name="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+          />
+          {formik.touched.email && formik.errors.email && (
+            <div>{formik.errors.email}</div>
+          )}
+          {emailCekErrorMessage && <div>{emailCekErrorMessage}</div>}
+        </FormControl>
+        <FormControl>
+          <FormLabel>Password</FormLabel>
+          <Input
+            type="password"
+            name="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            autoComplete="new-password"
+          />
+          {formik.touched.password && formik.errors.password && (
+            <div>{formik.errors.password}</div>
+          )}
+        </FormControl>
+        <FormControl>
+          <FormLabel>Confirm Password</FormLabel>
+          <Input
+            type="password"
+            name="password_confirm"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password_confirm}
+            autoComplete="new-password"
+          />
+          {formik.touched.password_confirm &&
+            formik.errors.password_confirm && (
+              <div>{formik.errors.password_confirm}</div>
+            )}
+        </FormControl>
+        <Button
+          type="submit"
+          bgGradient="linear(to-r, teal.400, blue.500)"
+          color="white"
+          marginTop="20px"
+        >
+          Sign Up
+        </Button>
+      </form>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }} // Konfigurasi animasi awal
+        animate={{
+          opacity: successMessage ? 1 : 0,
+          y: successMessage ? 0 : -20,
+        }} // Animasi masuk
+        exit={{ opacity: 0, y: -20 }} // Animasi keluar
+        transition={{ duration: 0.5 }} // Durasi animasi (dalam detik)
+      >
+        {successMessage && (
+          <div>Anda telah terdaftar. Redirecting ke halaman login...</div>
+        )}
+      </motion.div>
+
+      {registrationError && <div>{registrationError}</div>}
+    </Card>
   );
 };
 

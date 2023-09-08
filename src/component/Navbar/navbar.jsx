@@ -17,7 +17,7 @@ function Navbar() {
       align="center"
       justify="space-between"
       padding="1rem"
-      backgroundColor="teal.500"
+      bgGradient="linear(to-r, teal.400, blue.500)"
       color="white"
     >
       <Box marginRight="5">
@@ -56,7 +56,7 @@ function Navbar() {
         position="absolute"
         top="60px"
         right="0"
-        backgroundColor="teal.500"
+        bgGradient="linear(to-r, teal.400, blue.500)"
         borderRadius="5%"
         padding="1rem"
         boxShadow="-moz-initial"

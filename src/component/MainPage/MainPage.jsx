@@ -27,7 +27,7 @@ function MainPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/events")
+      .get("http://localhost:8001/events")
       .then((response) => {
         setData(response.data);
 
@@ -140,6 +140,7 @@ function MainPage() {
               </Text>
               <Button
                 colorScheme="teal"
+                bgGradient="linear(to-r, teal.400, blue.500)"
                 mt={4}
                 size={isLargerThan768 ? "md" : "sm"}
                 borderRadius="full"
