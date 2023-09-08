@@ -1,0 +1,68 @@
+.createNewEvent {
+    display: grid;
+    max-width: 400px;
+    margin: auto;
+    padding: 10px 10px;
+    background: transparent;
+}
+
+.createNewEvent h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.formTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.labelCell {
+    width: 30%;
+    padding: 8px;
+    text-align: right;
+}
+
+.inputCell {
+    width: 70%;
+    padding: 8px;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.inputForm {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: #007bff;
+    font-weight: 600;
+    text-align: center;
+    width: fit-content;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* .addButton {
+    
+} */
+
+.addingButton {
+    background-color: #ccc;
+    color: #333;
+    cursor: not-allowed;
+}

@@ -207,7 +207,7 @@
       "userId": 1,
       "productId": 1,
       "quantity": 2,
-      "totalPrice": 100.0,
+      "totalPrice": 100,
       "timestamp": "2023-09-01T10:00:00Z"
     },
     {
@@ -215,7 +215,7 @@
       "userId": 2,
       "productId": 2,
       "quantity": 1,
-      "totalPrice": 30.0,
+      "totalPrice": 30,
       "timestamp": "2023-09-02T14:30:00Z"
     },
     {
@@ -223,7 +223,7 @@
       "userId": 3,
       "productId": 3,
       "quantity": 3,
-      "totalPrice": 225.0,
+      "totalPrice": 225,
       "timestamp": "2023-09-03T09:15:00Z"
     }
   ]
