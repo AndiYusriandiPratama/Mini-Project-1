@@ -1,7 +1,6 @@
 import {
   Heading,
   Card,
-  Box,
   Button,
   FormControl,
   FormLabel,
@@ -20,7 +19,9 @@ import { useState } from "react";
 const RegisterForm = () => {
   const [successMessage, setSuccessMessage] = useState(false);
   const [emailCekErrorMessage, setEmailCekErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const isTaken = useSelector((state) => state.user.isTaken);
   const dispatch = useDispatch();
   const registrationError = useSelector(
     (state) => state.user.registrationError
@@ -48,22 +49,30 @@ const RegisterForm = () => {
     },
     validationSchema: UserSchema,
     onSubmit: async (values) => {
+      setIsSubmitting(true); // Menandakan bahwa form sedang dikirim
+
       try {
-        const isEmailTaken = dispatch(checkEmail(values.email));
-        if (isEmailTaken) {
+        await dispatch(checkEmail(values.email));
+
+        if (isTaken) {
           setEmailCekErrorMessage("Email Already Registered");
+          setIsSubmitting(false); // Hentikan pengiriman jika email sudah digunakan
           return;
         }
-      } catch (error) {
-        console.log("terjadi kesalahan saat memeriksa email");
-      }
 
-      dispatch(registerUser(values)).then(() => {
-        setSuccessMessage(true);
-        setTimeout(() => {
-          navigate("/login"); // Redirect ke halaman /login setelah pendaftaran berhasil
-        }, 2000); // Ganti angka 2000 dengan durasi animasi Anda (dalam milidetik)
-      });
+        // Jika email tersedia, daftarkan pengguna
+        const registrationResponse = await dispatch(registerUser(values));
+
+        if (registerUser.fulfilled.match(registrationResponse)) {
+          setSuccessMessage(true);
+          setTimeout(() => {
+            navigate("/login");
+          }, 2000);
+        }
+      } catch (error) {
+        console.error("Terjadi kesalahan saat mendaftar:", error);
+        setIsSubmitting(false); // Hentikan pengiriman jika terjadi kesalahan
+      }
     },
   });
 
@@ -151,6 +160,7 @@ const RegisterForm = () => {
           bgGradient="linear(to-r, teal.400, blue.500)"
           color="white"
           marginTop="20px"
+          disabled={formik.isSubmitting} // Disable tombol saat isTaken bernilai true
         >
           Sign Up
         </Button>

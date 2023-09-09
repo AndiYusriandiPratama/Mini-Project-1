@@ -41,7 +41,9 @@ function Navbar() {
         <Link marginRight="1rem" href="/register">
           Sign Up
         </Link>
-        <Link href="#">Keranjang</Link>
+        <Link marginRight="1rem" href="/user-event">
+          My Event
+        </Link>
       </Box>
 
       <IconButton
@@ -88,8 +90,8 @@ function Navbar() {
         >
           Sign Up
         </Link>
-        <Link display="block" color="white" href="#">
-          Keranjang
+        <Link display="block" color="white" href="/user-event">
+          My Event
         </Link>
       </Box>
     </Flex>

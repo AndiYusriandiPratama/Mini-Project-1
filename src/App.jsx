@@ -7,6 +7,7 @@ import RegisterForm from "./component/Auth/Register";
 import Login from "./component/Auth/Login";
 import FindEvents from "./component/MainPage/FindEvents";
 import EventDetails from "./component/FindEvents/EventDetails";
+import UserEvent from "./component/MainPage/UserEvent";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/register" element={<RegisterForm />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/" element={<MainPage />} />
+          <Route exact path="/user-event" element={<UserEvent />} />
           <Route exact path="/create-events" element={<CreateEvents />} />
           <Route exact path="/find-events" element={<FindEvents />} />
           <Route exact path="/events/:id" element={<EventDetails />} />

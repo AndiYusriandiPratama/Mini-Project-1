@@ -11,12 +11,8 @@ export const registerUser = createAsyncThunk(
 
 export const checkEmail = createAsyncThunk("user/checkEmail", async (email) => {
   try {
-    // Kirim permintaan GET dengan email sebagai parameter
     const response = await userApi.checkEmailAvailability(email);
-    console.log("Response from server:", response.data);
-
-    // Periksa apakah email tersedia atau tidak
-    return response.data.available;
+    return response; // Mengembalikan respons dari API
   } catch (error) {
     console.error("Error checking email:", error);
     throw error;
@@ -24,39 +20,36 @@ export const checkEmail = createAsyncThunk("user/checkEmail", async (email) => {
 });
 
 export const loginUser = createAsyncThunk(
-  "user/userLoginStatus",
-  async (credentials) => {
+  "user/loginUser",
+  async (params, { rejectWithValue }) => {
     try {
-      // Lakukan validasi email dan kata sandi di sini
-      const response = await userApi.login(credentials);
-
+      const response = await userApi.loginUser(params);
       if (response.data && response.data.length > 0) {
-        // Jika email dan kata sandi benar, kembalikan data pengguna
-        const userData = {
+        return {
           id: response.data[0].id,
-          name: response.data[0].name,
           username: response.data[0].username,
           email: response.data[0].email,
         };
-        return userData;
       } else {
-        // Jika email atau kata sandi salah, lempar error
-        throw new Error("Email atau kata sandi salah.");
+        return rejectWithValue("Data pengguna tidak ditemukan");
       }
     } catch (error) {
-      throw error;
+      console.error("Error logging in:", error);
+      return rejectWithValue("Username atau password salah");
     }
   }
 );
 
-const initialState = {
-  user: null,
-  registrationError: null,
-};
-
 const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: {
+    user: null,
+    isLoading: false,
+    isError: false,
+    errorMessage: "",
+    registrationError: null,
+    isEmailAvailable: false,
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -64,14 +57,30 @@ const userSlice = createSlice({
         console.log("Registrasi berhasil:", action.payload);
         state.user = action.payload;
         state.registrationError = null;
+        state.isTaken = false;
       })
       .addCase(registerUser.rejected, (state, action) => {
         console.log("Registrasi gagal", action.error);
         state.user = null;
         state.registrationError = action.error.message;
       })
+      .addCase(checkEmail.fulfilled, (state, action) => {
+        state.isEmailAvailable = action.payload;
+      })
       .addCase(checkEmail.rejected, (state, action) => {
-        console.log("Kesalahan memeriksa email", action.error);
+        state.isEmailAvailable = false;
+        state.error = action.error.message;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.errorMessage = "";
+        state.user = action.payload;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.errorMessage = action.error.message;
       });
   },
 });

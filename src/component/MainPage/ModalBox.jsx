@@ -8,15 +8,17 @@ import {
   ModalBody,
   ModalCloseButton,
   Button,
+  Link,
 } from "@chakra-ui/react";
 import styles from "./ModalBox.module.css";
 
-const EventModal = ({ isOpen, onClose, event }) => {
+const EventModal = ({ isOpen, onClose, event, addEvent }) => {
   if (!event) {
     return null;
   }
 
   const modalWidth = event.description.length < 50 ? "400px" : "600px";
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered size={modalWidth}>
       <ModalOverlay />
@@ -55,7 +57,16 @@ const EventModal = ({ isOpen, onClose, event }) => {
             <p>{event.location}</p>
           </div>
         </ModalBody>
-        <ModalFooter>
+
+        <ModalFooter
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <Link href="/userEvent">
+            <Button colorScheme="teal" variant="outline" size="md">
+              Tambah Event
+            </Button>
+          </Link>
+
           <Button colorScheme="blue" mr={3} onClick={onClose}>
             Close
           </Button>
