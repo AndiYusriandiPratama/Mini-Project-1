@@ -1,12 +1,54 @@
-.btn {
-    background-color: #007bff;
-    font-weight: 600;
+article {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+article h2{
+    color: #333;
+}
+
+.title {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.imgContainer {
     text-align: center;
-    width: fit-content;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.location {
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.btnContainer {
+    text-align: center;
+}
+
+.btn {
+    background-color: #ff0000;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
     font-size: 16px;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #cc0000;
 }

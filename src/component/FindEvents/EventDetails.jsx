@@ -8,11 +8,11 @@ const EventDetails = () => {
     data: events,
     error,
     isPending,
-  } = useFetch("http://localhost:3001/events/" + id);
+  } = useFetch("http://localhost:8001/events/" + id);
   const navigate = useNavigate();
 
   const handleDeleteClick = () => {
-    fetch("http://localhost:3001/events/" + events.id, {
+    fetch("http://localhost:8001/events/" + events.id, {
       method: "DELETE",
     }).then(() => {
       navigate("/find-events");
@@ -25,12 +25,22 @@ const EventDetails = () => {
       {error && <div>{error}</div>}
       {events && (
         <article>
-          <h2>{events.title}</h2>
-          <p>Location {events.location}</p>
-          <div>{events.description}</div>
-          <button onClick={handleDeleteClick} className={css.btn}>
-            delete
-          </button>
+          <div>
+            <h2 className={css.title}>{events.title}</h2>
+          </div>
+          <div className={css.articleContainer}>
+            <div className={css.imgContainer}>
+              <img className={css.img} src={events.img} alt="" />
+            </div>
+            <p className={css.location}>Location: {events.location}</p>
+            <p className={css.date}>Date: {events.date}</p>
+            <div className={css.description}>{events.description}</div>
+          </div>
+          <div className={css.btnContainer}>
+            <button onClick={handleDeleteClick} className={css.btn}>
+              delete
+            </button>
+          </div>
         </article>
       )}
     </div>
