@@ -179,6 +179,14 @@
       "location": "Semarang",
       "description": "Turnamen Catur adalah kompetisi catur terbesar tahun ini. Saksikan pertandingan otak-otak terbaik di dunia catur!",
       "img": "https://i.pinimg.com/236x/7a/2d/29/7a2d29d06eabf2a8008f97b74e9cc281.jpg"
+    },
+    {
+      "title": "Konser Music Jazz",
+      "date": "2012-06-20",
+      "time": "08:30",
+      "location": "Jakarta",
+      "description": "dlsmaccj askddsnak n safkdasdkjnja",
+      "id": 21
     }
   ],
   "users": [
@@ -289,6 +297,46 @@
       "password": "123123",
       "password_confirm": "123123",
       "id": 15
+    },
+    {
+      "name": "rian",
+      "username": "rian",
+      "email": "rian@gmail.com",
+      "password": "123123",
+      "password_confirm": "123123",
+      "id": 16
+    },
+    {
+      "name": "rian",
+      "username": "rian",
+      "email": "rian@gmail.com",
+      "password": "123123",
+      "password_confirm": "123123",
+      "id": 17
+    },
+    {
+      "name": "rtx",
+      "username": "rtx",
+      "email": "123123@gmail.com",
+      "password": "123123",
+      "password_confirm": "123123",
+      "id": 18
+    },
+    {
+      "name": "rian",
+      "username": "rian",
+      "email": "123123@gmail.com",
+      "password": "123123",
+      "password_confirm": "123123",
+      "id": 19
+    },
+    {
+      "name": "rian",
+      "username": "rian",
+      "email": "123123@gmail.com",
+      "password": "123123123",
+      "password_confirm": "123123123",
+      "id": 20
     }
   ],
   "transactions": [

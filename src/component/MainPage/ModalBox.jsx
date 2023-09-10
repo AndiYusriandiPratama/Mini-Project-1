@@ -61,7 +61,7 @@ const EventModal = ({ isOpen, onClose, event, addEvent }) => {
         <ModalFooter
           style={{ display: "flex", justifyContent: "space-between" }}
         >
-          <Link href="/userEvent">
+          <Link href="/user-event">
             <Button colorScheme="teal" variant="outline" size="md">
               Tambah Event
             </Button>

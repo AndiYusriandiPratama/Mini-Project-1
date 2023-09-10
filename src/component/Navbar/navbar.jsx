@@ -20,15 +20,15 @@ function Navbar() {
       bgGradient="linear(to-r, teal.400, blue.500)"
       color="white"
     >
-      <Box marginRight="5">
-        <Link fontSize="xl" fontWeight="bold" href="/">
-          7 Shop
+      <Box marginRight="10">
+        <Link fontSize="xl" fontWeight="bold" href="/" marginLeft="60px">
+          <b>7</b> event
         </Link>
       </Box>
 
       <Spacer />
 
-      <Box display={{ base: "none", md: "block" }}>
+      <Box display={{ base: "none", md: "block" }} marginRight="40px">
         <Link marginRight="1rem" href="/find-events">
           Find Events
         </Link>

@@ -29,6 +29,7 @@ const loginUser = async (username, password) => {
     if (response.status === 200) {
       const userData = response.data.find((user) => {
         // Memeriksa apakah username dan password sesuai
+        console.log(user.username === username && user.password === password);
         return user.username === username && user.password === password;
       });
 

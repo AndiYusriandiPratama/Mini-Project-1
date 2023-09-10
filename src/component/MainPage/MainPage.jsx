@@ -18,7 +18,7 @@ function MainPage() {
   const [data, setData] = useState([]);
   const [displayedData, setDisplayedData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState(null); //masih belum jalan
   const [modalOpen, setModalOpen] = useState(false);
   const [isLargerThan768, isLargerThan480] = useMediaQuery([
     "(min-width: 768px)",
@@ -88,7 +88,7 @@ function MainPage() {
         >
           <Input
             type="text"
-            placeholder="Cari produk..."
+            placeholder="Cari events..."
             size="lg"
             position="relative"
             borderRadius="full"
