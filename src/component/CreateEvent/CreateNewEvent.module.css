@@ -1,48 +1,50 @@
 .createNewEvent {
     display: grid;
-    max-width: 400px;
-    margin: auto;
+
+
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 10px;
-    background: transparent;
 }
+
 
 .createNewEvent h2 {
     font-size: 24px;
     text-align: center;
+    padding: 15px;
+    color: #fff;
 }
+
 
 .formTable {
     width: 100%;
     border-collapse: collapse;
 }
 
-.labelCell {
-    width: 30%;
-    padding: 8px;
-    text-align: right;
-}
-
-.inputCell {
-    width: 70%;
-    padding: 8px;
-}
 
 .label {
-    font-weight: 500;
+    font-weight: 700;
+    color: #fff;
 }
+
 
 .inputForm {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background-color: rgba(33, 33, 33, 0.7);
+    color: #fff;
+    font-weight: 600;
 }
+
 
 .error {
     color: red;
-    font-weight: bold;
-    margin-top: 10px;
+    margin: 10px 10px;
 }
+
 
 .btn {
     background-color: #007bff;
@@ -51,18 +53,31 @@
     width: fit-content;
     color: #fff;
     border: none;
+    margin-top: 10px;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 }
 
+
 /* .addButton {
-    
-} */
+    } */
+
 
 .addingButton {
     background-color: #ccc;
     color: #333;
     cursor: not-allowed;
+}
+
+
+.background {
+    background: linear-gradient(rgba(33, 33, 33, 0.6), rgba(33, 33, 33, 0.5)), url("https://images.unsplash.com/photo-1613451058759-50964be7da5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3174&q=80");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

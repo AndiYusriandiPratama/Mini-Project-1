@@ -10,7 +10,10 @@ const EventsList = ({ events }) => {
           <div className={css.eventPreview} key={index.id}>
             <Link to={`/events/${index.id}`}>
               <h3>{index.title}</h3>
-              <p>Location {index.location}</p>
+              <div className={css.imgContainer}>
+                <img className={css.img} src={index.img} alt="" />
+              </div>
+              <p className={css.desc}>In {index.location} at {index.date}</p>
             </Link>
           </div>
         ))}
